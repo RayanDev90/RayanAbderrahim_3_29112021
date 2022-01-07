@@ -1,0 +1,48 @@
+.fa-heart {
+  font-size: 25px;
+}
+.heart {
+  height: 45px;
+  width: 45px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &__anim--mask {
+    position: absolute;
+  }
+  &:hover .heart__anim--mask {
+    font-weight: bold;
+    color: $color-primary;
+    background: linear-gradient(
+      346deg,
+      rgba(153, 226, 208, 1) 0%,
+      rgba(255, 121, 218, 1) 20%,
+      rgba(147, 86, 220, 1) 97%
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: zoom 0.4s linear;
+  }
+  @keyframes zoom {
+    0% {
+      transform: scale(0);
+    }
+    30% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(2);
+    }
+    70% {
+      transform: scale(0.3);
+    }
+    95% {
+      transform: scale(2);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}

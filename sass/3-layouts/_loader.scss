@@ -1,0 +1,92 @@
+.waiting {
+  visibility: hidden;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-content: center;
+  position: fixed;
+  z-index: 2;
+  background: linear-gradient(
+    346deg,
+    rgba(255, 121, 218, 1) 22%,
+    rgba(90, 43, 94, 1) 43%
+  );
+  color: #9b59b6;
+  opacity: 0;
+  animation: loader 3s linear;
+  .loader {
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+  }
+  &__pattern {
+    border-radius: 50px;
+    border: 7px solid rgba(255, 255, 255, 0.2);
+  }
+  &__pattern::after {
+    content: "";
+    position: absolute;
+    top: -7px;
+    left: -7px;
+    bottom: -7px;
+    right: -7px;
+    border-radius: 50px;
+    border: 7px solid transparent;
+    border-right-color: #fff;
+    border-left-color: #fff;
+    animation: spin 1s linear infinite;
+  }
+  &__pattern::before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    bottom: 5px;
+    right: 5px;
+    border-radius: 50px;
+    border: 7px solid transparent;
+    border-right-color: #fff;
+    border-left-color: #fff;
+    animation: spin 1.5s linear infinite;
+    opacity: 0.8;
+  }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
+@keyframes loader {
+  0% {
+    display: block;
+    visibility: visible;
+  }
+  20% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.8;
+  }
+  99% {
+    opacity: 0;
+  }
+}
+@keyframes hide-page {
+  0% {
+    display: none;
+  }
+  100% {
+    display: block;
+  }
+}
